@@ -1,0 +1,37 @@
+<h2>Available Quizzes</h2>
+<table border="1">
+  <tr>
+    <th>ID</th>
+    <th>Name</th>
+    <th>Description</th>
+    <th>Type</th>
+    <th>Action</th> <!-- Added new column header -->
+  </tr>
+  {% for quiz in quizzes %}
+  <tr>
+    <td>{{ quiz[0] }}</td>
+    <td>{{ quiz[1] }}</td>
+    <td>{{ quiz[2] }}</td>
+    <td>{{ quiz[3] }}</td>
+    <td><a href="/quiz/{{ quiz[0] }}">Play</a></td> <!-- Moved inside <tr> -->
+  </tr>
+  {% endfor %}
+</table>
+<style>
+  table {
+    border-collapse: collapse;
+    width: 80%;
+  }
+  th, td {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #ddd;
+  }
+  a {
+    text-decoration: none;
+    color: white;
+    background-color: green;
+    padding: 5px 10px;
+    border-radius: 5px;
+  }
+</style>
